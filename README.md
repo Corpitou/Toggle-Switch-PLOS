@@ -36,12 +36,33 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 
 ---
 
-## Installation
+## Quickstart for Advanced Users
+
+1. **Ensure prerequisites are installed:**
+   - **Compiler and tools:** Ensure that `gcc`, `make`, and basic development tools are installed on your system.
+   - **GNU Scientific Library (GSL):** Although not strictly required, having GSL installed on your system (e.g., `gsl-config --version`) can help with debugging. Precompiled GSL static libraries are already included in the `LIB` directory of the project.
+
+2. **Clone the repository and compile:**
+   ```bash
+   git clone https://github.com/Corpitou/Toggle-Switch-PLOS.git
+   cd Toggle-Switch-PLOS
+   make
+
+3. **Compilation and execution:**
+
+   - The make command will compile the project and automatically run the program. If the compilation is successful, you will see the output Hello, it's working!.
+
+3. **Modify the code:**
+
+   - Open SRC/main.c, make changes to the main() function or other files, and recompile using make.
+
+
+## Full Installation Guide
 
 ### Prerequisites
 - **Operating System:** macOS (M-chip recommended), Linux, or Windows (via WSL).
 - **Required Tools:**
-  - GNU Scientific Library (GSL)
+  - GNU Scientific Library (GSL) (Although not strictly required, having GSL installed on your system (e.g., `gsl-config --version`) can help with debugging. Precompiled GSL static libraries are already included in the `LIB` directory of the project.)
   - C compiler (gcc or clang)
   - Make utility
 - **Optional:**
@@ -50,7 +71,7 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 ### Platform-Specific Instructions
 
 #### macOS
-1. (Recommended) Install Xcode Command Line Tools:
+1. **(Recommended) Install Xcode Command Line Tools:**
 
 The easiest way to get gcc or clang on macOS is by installing the Command Line Tools for Xcode:
 
@@ -59,7 +80,7 @@ The easiest way to get gcc or clang on macOS is by installing the Command Line T
    ```
 This will install 'clang', 'make', and other essential tools.
 
-2. (Optional) Install Homebrew:
+2. **(Optional) Install Homebrew:**
 
 Homebrew is a package manager for macOS and can be used to install a variety of software, including gcc and other development tools. To install Homebrew:
 
@@ -70,7 +91,7 @@ Homebrew is a package manager for macOS and can be used to install a variety of 
    ```bash
    brew install gcc make gsl
    ```
-3. Verify installations:
+3. **Verify installations:**
    ```bash
    gcc --version
    make --version
@@ -80,15 +101,15 @@ Homebrew is a package manager for macOS and can be used to install a variety of 
 #### Linux
 On Linux, the required tools and libraries can be installed using your system's package manager. Below are the instructions for systems based on Debian/Ubuntu.
 
-1. Update your package manager:
+1. **Update your package manager:**
    ```bash
    sudo apt update
    ```
-2. Install required tools:
+2. **Install required tools:**
    ```bash
    sudo apt install -y gcc make build-essential libgsl-dev
    ```
-3. Verify installations:
+3. **Verify installations:**
    ```bash
    gcc --version
    make --version
@@ -96,17 +117,17 @@ On Linux, the required tools and libraries can be installed using your system's 
    ```
 
 #### Windows (via WSL)
-1. Install WSL:
+1. **Install WSL:**
    ```bash
    wsl --install
    ```
    Restart your system if prompted.
-2. Open a Linux terminal via WSL and install dependencies:
+2. **Open a Linux terminal via WSL and install dependencies:**
    ```bash
    sudo apt update
    sudo apt install libgsl-dev build-essential
    ```
-3. Clone the repository and follow Linux instructions.
+3. **Clone the repository and follow Linux instructions.**
 
 #### Notes
 macOS vs Linux Compatibility: The project has been tested and is compatible with both macOS (using gcc or clang) and Linux (gcc).
@@ -128,9 +149,9 @@ This will execute the script in the Makefile, detect the GSL installation path, 
 
 ### Customizing Programs
 
-1. Open the `main.c` file (in `SRC/`).
-2. Modify the `main()` function to call the desired function (e.g., `START_...`).
-3. Recompile the code using `make`.
+1. **Open the `main.c` file (in `SRC/`).**
+2. **Modify the `main()` function to call the desired function (e.g., `START_...`).**
+3. **Recompile the code using `make`.**
 
 ---
 
@@ -166,35 +187,38 @@ Use WSL (Windows Subsystem for Linux) to run the project. Follow the [WSL instru
 
 #### (Recommended) Website installation 
 
-1. Directly install the GNU Scientific Libraries from the website: [https://www.gnu.org/software/gsl/](https://www.gnu.org/software/gsl/)
+1. **Directly install the GNU Scientific Libraries from the website: [https://www.gnu.org/software/gsl/](https://www.gnu.org/software/gsl/)**
 
-2. Follow the `INSTALL` file instructions.
+2. **Follow the `INSTALL` file instructions.**
 
 #### (Optional) Homebrew installation 
 
-Install or reinstall GSL using Homebrew:
-```bash
-brew install gsl
-```
-Verify the installation:
-```bash
-gsl-config --version
-```
+1. **Install or reinstall GSL using Homebrew:**
+   ```bash
+	brew install gsl
+   ```
+
+2. **Verify the installation:**
+   ```bash
+	gsl-config --version
+   ```
 
 As explain before, it is not recommended for GSL due to potential conflicts; prefer downloading GSL directly from the official site.
 
 ### Linux
-Install GSL using your package manager:
-```bash
-sudo apt update
-sudo apt install libgsl-dev
-```
+1. **Install GSL using your package manager:**
+
+   ```bash
+	sudo apt update
+	sudo apt install libgsl-dev
+   ```
 
 ---
 
 ## General Note
 
 If you encounter problems, please:
+
 1. Check the documentation and links above.
 2. Note that **this project will not receive future support or updates.**
 
