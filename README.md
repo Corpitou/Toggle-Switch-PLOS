@@ -94,6 +94,7 @@ Homebrew is a package manager for macOS and can be used to install a variety of 
    brew install gcc make gsl
    ```
 3. **Verify installations:**
+
    ```bash
    gcc --version
    make --version
