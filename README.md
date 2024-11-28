@@ -9,7 +9,8 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 
 ## Table of Content
 - [Description](#description)
-- [Installation](#installation)
+- [Quickstart for Advanced Users](#quickstart-for-advanced-users)
+- [Full Installation Guide](#full-installation-guide)
   - [Prerequisites](#prerequisites)
   - [Platform-Specific Instructions](#platform-specific-instructions)
     - [macOS](#macos)
