@@ -51,7 +51,7 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 
 3. **Compilation and execution:**
 
-   - The make command will compile the project and automatically run the program. If the compilation is successful, you will see the output Hello, it's working!.
+   - The make command will compile the project and automatically run the program. If the compilation is successful, you will see the output: `Hello, it's working!`.
 
 3. **Modify the code:**
 
