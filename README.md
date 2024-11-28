@@ -57,6 +57,7 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 
    - Open SRC/main.c, make changes to the main() function or other files, and recompile using make.
 
+---
 
 ## Full Installation Guide
 
