@@ -1,0 +1,64 @@
+CC = gcc
+CFLAGS = -g -Wall -Wextra -O3
+RM = rm -rf 
+
+UNAME_S := $(shell uname)
+
+ifeq ($(UNAME_S), Darwin)
+    $(info )
+    $(info ==> Detected macOS: Adjusting flags...)
+    CFLAGS += -Xpreprocessor
+endif
+
+ifeq ($(UNAME_S), Linux)
+    $(info ==> Detected Linux: Using default flags...)
+endif
+
+PERSONNAL_SUBLIB_PATH = $(MAIN_MAKEFILE_DIR)/MAIN_LIB
+PERSONNAL_SUBLIB_DIRS = $(wildcard $(PERSONNAL_SUBLIB_PATH)/*/)
+PERSONNAL_SUBLIB_SOURCES = $(foreach dir, $(PERSONNAL_SUBLIB_DIRS), $(wildcard $(dir)*.c))
+PERSONNAL_SUBLIB_OBJECTS = $(patsubst %.c, %.o, $(PERSONNAL_SUBLIB_SOURCES))
+.INTERMEDIATE: $(PERSONNAL_SUBLIB_OBJECTS)
+
+PERSONNAL_MERGEDLIB_PREFIX = lib
+PERSONNAL_MERGEDLIB_NAME = perso
+PERSONNAL_MERGEDLIB_EXT = .a
+PERSONNAL_MERGEDLIB_PATH = $(PERSONNAL_SUBLIB_PATH)
+PERSONNAL_MERGEDLIB_FILE = $(PERSONNAL_MERGEDLIB_PATH)/$(PERSONNAL_MERGEDLIB_PREFIX)$(PERSONNAL_MERGEDLIB_NAME)$(PERSONNAL_MERGEDLIB_EXT)
+.INTERMEDIATE: $(PERSONNAL_MERGEDLIB_FILE)
+	
+PERSONNAL_HEADERS_PATH = $(MAIN_MAKEFILE_DIR)/MAIN_LIB
+
+ifeq ($(UNAME_S), Darwin)
+    GSL_LIB_PATH = $(MAIN_MAKEFILE_DIR)/GSL_LIB/macos/lib
+    GSL_HEADERS_PATH = $(MAIN_MAKEFILE_DIR)/GSL_LIB/macos/include
+endif
+
+ifeq ($(UNAME_S), Linux)
+    GSL_LIB_PATH = $(MAIN_MAKEFILE_DIR)/GSL_LIB/linux/lib
+    GSL_HEADERS_PATH = $(MAIN_MAKEFILE_DIR)/GSL_LIB/linux/include
+endif
+
+
+ifeq ($(wildcard $(GSL_HEADERS_PATH)),)
+    GSL_HEADERS_FLAG =
+else
+    GSL_HEADERS_FLAG = -I$(GSL_HEADERS_PATH)
+endif
+
+INCLUDE_ALL_HEADERS = \
+	$(GSL_HEADERS_FLAG) \
+	-I$(PERSONNAL_HEADERS_PATH)
+
+INCLUDE_ALL_LIBS = \
+	$(GSL_LIB_FLAG) -lgsl -lgslcblas -lm\
+	-L$(PERSONNAL_MERGEDLIB_PATH) -l$(PERSONNAL_MERGEDLIB_NAME) \
+	-Wno-unused-command-line-argument
+
+$(PERSONNAL_MERGEDLIB_FILE): $(PERSONNAL_SUBLIB_OBJECTS)
+	@echo "..... --> Creating merged library: $(PERSONNAL_MERGEDLIB_FILE)"
+	ar rcs $@ $^
+
+%.o: %.c
+	@echo "Compiling $< with libraries from $(LIBRARY_LOCATION)."
+	$(CC) $(CFLAGS) $(INCLUDE_ALL_HEADERS) -c $< -o $@

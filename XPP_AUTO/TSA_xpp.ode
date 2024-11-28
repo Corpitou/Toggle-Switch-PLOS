@@ -1,0 +1,44 @@
+# Model: Toggle Switch 
+# Author : Corentin Robert (corentin.robert@ulb.be)
+# Description: This model describes the dynamics of two interacting genes, x and y in the context of cell differentiation
+
+# Differential Equations
+
+dx/dt = (FI * (1 + dfi) * (((1 + dki)^n) / (((1 + dki)^n) + (y^n)))) + (FA * (1 + dfa) * ((x^n) / ((K^n) * ((1 + dka)^n) + (x^n)))) - ((1 + dd) * x)
+
+dy/dt = (FI * (1 - dfi) * (((1 - dki)^n) / (((1 - dki)^n) + (x^n)))) + (FA * (1 - dfa) * ((y^n) / ((K^n) * ((1 - dka)^n) + (y^n)))) - ((1 - dd) * y)
+
+# Model Parameters
+
+param FI = 			# Inhibition strength
+param FA = 			# Activation strength
+param K = 0.6		# Dissociation constant ratio
+param n = 4			# Hill coefficient 
+
+param dfi = 0		# Inhibition symmetry parameter
+param dfa = 0		# Activation asymmetry parameter
+param dki = 0		# Inhibition dissociation constant asymmetry parameter
+param dka = 0		# Activation dissociation constantsymmetry parameter
+param dd = 0		# Degradation asymmetry parameter
+
+# Initial Conditions
+
+ini x = 0
+ini y = 0
+
+# XPP Settings for phase space plot
+
+@ xp = x, yp = y
+@ xlo = 0, xhi = 10, ylo = 0, yhi = 10
+@ total = 50, dt = 0.01
+@ nmesh = 400
+
+# AUTO Continuation Parameters
+
+@ autoxmin = -1, autoxmax = 1
+@ autoymin = 0, autoymax = 20
+@ ntst = 50, nmax = 50000, npr = 1000
+@ ds = -0.001, dsmin = 0.0005, dsmax = 0.001
+@ parmin = -1, parmax = 1
+
+done

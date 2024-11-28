@@ -1,0 +1,11 @@
+prefix=/root/GSL_LIB/linux
+exec_prefix=/root/GSL_LIB/linux
+libdir=/root/GSL_LIB/linux/lib
+includedir=/root/GSL_LIB/linux/include
+GSL_CBLAS_LIB=-lgslcblas
+
+Name: GSL
+Description: GNU Scientific Library
+Version: 2.8
+Libs: -L/root/GSL_LIB/linux/lib -lgsl ${GSL_CBLAS_LIB} -lm -lm 
+Cflags: -I/root/GSL_LIB/linux/include

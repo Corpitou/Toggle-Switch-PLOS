@@ -1,0 +1,11 @@
+prefix=/Users/pitou/Desktop/GSLCONFIG
+exec_prefix=/Users/pitou/Desktop/GSLCONFIG
+libdir=/Users/pitou/Desktop/GSLCONFIG/lib
+includedir=/Users/pitou/Desktop/GSLCONFIG/include
+GSL_CBLAS_LIB=-lgslcblas
+
+Name: GSL
+Description: GNU Scientific Library
+Version: 2.8
+Libs: -L/Users/pitou/Desktop/GSLCONFIG/lib -lgsl ${GSL_CBLAS_LIB}  -lm 
+Cflags: -I/Users/pitou/Desktop/GSLCONFIG/include
