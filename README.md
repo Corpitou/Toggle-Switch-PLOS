@@ -89,7 +89,7 @@ Homebrew is a package manager for macOS and can be used to install a variety of 
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
-   Use Homebrew to install dependencies:
+Use Homebrew to install dependencies:
    ```bash
    brew install gcc make gsl
    ```
