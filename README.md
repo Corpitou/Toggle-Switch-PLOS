@@ -1,7 +1,7 @@
-# Toggle-Switch-PLOS
+# Toggle Switch Model 
 
 ## Description
-This project implements the Gillespie Stochastic Simulation Algorithm (SSA) to model the dynamics of a gene regulatory network. The focus is on the robustness of differentiation processes and the influence of noise within a genetic regulatory system. The model encompasses multiple reaction pathways, represented by rate equations that depend on parameters and variables describing gene activation and degradation.
+This project implements the Gillespie Stochastic Simulation Algorithm to model the dynamics of a two-gene regulatory network. The focus is on the robustness of differentiation processes and the influence of noise within a genetic regulatory system. The model encompasses multiple reaction pathways, represented by rate equations that depend on parameters and variables describing gene activation and degradation.
 
 A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and Bifurcation Diagrams (see [XPP-AUTO Website](https://sites.pitt.edu/~phase/bard/bardware/xpp/xpp.html) for more informations.)
 
