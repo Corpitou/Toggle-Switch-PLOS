@@ -41,7 +41,7 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 
 1. **Ensure prerequisites are installed:**
    - **Compiler and tools:** Ensure that `gcc`, `make`, and basic development tools are installed on your system.
-   - **GNU Scientific Library (GSL):** Although not strictly required, having GSL installed on your system (e.g., `gsl-config --version`) can help with debugging. Precompiled GSL static libraries are already included in the `LIB` directory of the project.
+   - **GNU Scientific Library (GSL):** Precompiled GSL static libraries are already included in the `LIB` directory of the project. However, they are precompiled with Ubuntu 24.04.1 and macos 15.1 which may not fit with your OS version. To avoid any potential issues, please install GSL on your system.
 
 2. **Clone the repository and compile:**
    ```bash
