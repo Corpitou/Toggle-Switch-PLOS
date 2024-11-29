@@ -64,11 +64,11 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 ### Prerequisites
 - **Operating System:** macOS (M-chip recommended), Linux, or Windows (via WSL).
 - **Required Tools:**
-  - GNU Scientific Library (GSL) (Although not strictly required, having GSL installed on your system (e.g., `gsl-config --version`) can help with debugging. Precompiled GSL static libraries are already included in the `LIB` directory of the project.)
+  - GNU Scientific Library (GSL) Precompiled GSL static libraries are already included in the `LIB` directory of the project. However, they are precompiled with Ubuntu 24.04.1 and macos 15.1 which may not fit with your OS version. To avoid any potential issues, please install GSL on your system.
   - C compiler (gcc or clang)
   - Make utility
 - **Optional:**
-  - [Homebrew](https://brew.sh) (not recommended for GCC or GSL due to potential conflicts; prefer downloading GCC from the XCode Command Line Tools and downloading GSL directly from the official site).
+  - [Homebrew](https://brew.sh) (not recommended for GCC or GSL due to potential conflicts; prefer downloading GCC from the XCode Command Line Tools and downloading GSL directly from the official website).
   
 ### Platform-Specific Instructions
 
@@ -164,7 +164,7 @@ This will execute the script in the Makefile, detect the GSL installation path, 
 
 #### macOS Users
 
-Normally, the project should run properly on macOS (at least with a M-chip). 
+Normally, the project should run properly on macOS (at least with a M-chip (not tested on Intel-based Mac)). 
 
 #### Linux Users
 
