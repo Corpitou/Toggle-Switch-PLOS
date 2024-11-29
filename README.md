@@ -55,9 +55,33 @@ A XPP-AUTO file is also implemented to compute Temporal Series, Phase Spaces and
 
 3. **Modify the code:**
 
-   - Open SRC/main.c, make changes to the main() function or other files, and recompile using make.
+   - Open SRC/TSA.c, make changes to the main() function or other files, and recompile using make.
 
-If you encounter any issues, please follow the [Full Installation Guide](#full-installation-guide).
+If you encounter any issue, please follow the [Full Installation Guide](#full-installation-guide) or the [Troubleshooting](#troubleshooting) sections.
+
+---
+
+## Usage
+
+### Compilation and Running
+
+1. **Open a terminal.**
+2. **To compile and run this project, navigate to the project directory and use the provided Makefile:**
+```bash
+cd /path/to/Toggle-Switch-PLOS
+make
+```
+This will execute the script in the Makefile, detect the GSL installation path, and compile the project. If everything works correctly, the compiled program will automatically run and display "Hello, it's working!".
+
+### Customizing Programs
+
+1. **Open the `TSA.c` file (in `SRC/`).**
+2. **Modify the `main()` function to call the desired function (e.g., `START_...`).**
+3. **Recompile the code using `make`.**
+
+### Data File Managment
+
+
 
 ---
 
@@ -77,21 +101,23 @@ If you encounter any issues, please follow the [Full Installation Guide](#full-i
 #### macOS
 1. **(Recommended) Install Xcode Command Line Tools:**
 
-The easiest way to get gcc or clang on macOS is by installing the Command Line Tools for Xcode:
+   The easiest way to get gcc or clang on macOS is by installing the Command Line Tools for Xcode:
 
    ```bash
    xcode-select --install
    ```
-This will install 'clang', 'make', and other essential tools.
+   This will install 'clang', 'make', and other essential tools.
 
 2. **(Optional) Install Homebrew:**
 
-Homebrew is a package manager for macOS and can be used to install a variety of software, including gcc and other development tools. To install Homebrew:
+   Homebrew is a package manager for macOS and can be used to install a variety of software, including gcc and other development tools. To install Homebrew:
 
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
-Use Homebrew to install dependencies:
+   
+   Use Homebrew to install dependencies:
+   
    ```bash
    brew install gcc make gsl
    ```
@@ -138,25 +164,6 @@ On Linux, the required tools and libraries can be installed using your system's 
 macOS vs Linux Compatibility: The project has been tested and is compatible with both macOS (using gcc or clang) and Linux (gcc).
 Static Libraries: The project uses pre-compiled static libraries for GSL, so you don't need to install dynamic GSL libraries. However, installing GSL on your system may help with debugging or future modifications.
 
----
-
-## Usage
-
-### Compilation and Running
-
-1. **Open a terminal.**
-2. **To compile and run this project, navigate to the project directory and use the provided Makefile:**
-```bash
-cd /path/to/Toggle-Switch-PLOS
-make
-```
-This will execute the script in the Makefile, detect the GSL installation path, and compile the project. If everything works correctly, the compiled program will automatically run and display "Hello, it's working!".
-
-### Customizing Programs
-
-1. **Open the `main.c` file (in `SRC/`).**
-2. **Modify the `main()` function to call the desired function (e.g., `START_...`).**
-3. **Recompile the code using `make`.**
 
 ---
 
